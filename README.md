@@ -12,11 +12,11 @@
 
 | 이름 | 역할 | 담당 업무 |
 | --- | --- | --- |
-| 정한교 | 팀장 | 서비스 구현 관련 전반적인 개발, 전체적인 설계및 기획, 팀원 조율,문서 제작, 영상제작 |
-| 신현식 | 팀원 | 인프라 구축, CICD 파이프라인 설계 및 구축 |
-| 최수환 | 팀원 | 인프라구축, CICD 파이프라인 설계 및 구축, 배포용 깃 관리 |
-| 이승엽 | 팀원 | 인프라 구축, monitoring 환경 구축, PPT 발표 |
-| 배수빈 | 팀원 | 인프라 구축, monitoring  |
+| 정한교 | 팀장 | 서비스 구현 개발, 전체적인 설계및 기획 |
+| 신현식 | 팀원 | CICD 파이프라인 설계 및 구축 |
+| 최수환 | 팀원 | CICD 파이프라인 설계 및 구축, 배포용 깃 관리 |
+| 이승엽 | 팀원 | monitoring 환경 구축, PPT 발표 |
+| 배수빈 | 팀원 | monitoring  |
 
 ### 2-2 협업 방식
 
@@ -118,6 +118,19 @@ Phase 0 에서 진행한 기획에 맞게 기본적인 기능이 동작할 수 �
 ### 4-4 Infra
 
 AWS EKS 를 사용해 클러스터를 구현하여 고가용성 확보 및 여러 AWS 어플리케이션 이용 (RDS, Route53, EFS storage)
+AWS Well-Architected 를 최대한 준수하여 인프라 구축
+퍼블릭, 프라이빗 서브넷으로 VPC를 나누어 기본적인 네트워크 보안
+퍼블릭 서브넷 : APP(Frontend)
+프라이빗 서브넷 : DB, API(Backend), Prometheus, Grafana, Jenkins, Argocd
+
+네트워크 연결
+Ingress : APP(frontend) service -> port(443)
+443 -> AWS ALB -> InternetGateway -> Route53(DNS)
+
+각 담당별 IAM 설정 후 권한에 따른 리소스 접근 권한 설정
+
+k8s ingress
+각 어플리케이션 별 연결 허용 권한 설정
 
 ### 4-5 CICD
 
