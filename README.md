@@ -95,11 +95,11 @@ Phase 0 에서 진행한 기획에 맞게 기본적인 기능이 동작할 수 �
 
 ### 4-2 Backend
 
-앞서 Usecase와 DB의 정보를 CRUD하는 **REST API**를 **Spring**으로 구현
+앞서 Usecase와 DB의 정보를 CRUD하는 **REST API**를 **Spring**으로 구현한 기본적인 수강신청 API
 
 [https://github.com/tkfka1/course-registration-GoormUniversity-restapi](https://github.com/tkfka1/course-registration-GoormUniversity-restapi)
 
-또한 **MSA (MicroService Architecture)**를 구현해보고자 하여 간단한 **AI 서비스**를 제공하는 백엔드
+또한 **MSA (MicroService Architecture)**를 구현해보고자 하여 간단한 **AI 서비스**를 제공하는 AI 서비스 API
 
 **pytorch** 를 사용해 연산을 하고 **Flask** **프레임워크**를 사용해 **REST API** 구현 
 
